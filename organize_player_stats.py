@@ -3,122 +3,62 @@ import numpy as np
 
 def organize_player_stats():
     """
-    Organize defensive and offensive player stats by position and player.
-    Creates separate DataFrames for defensive and offensive stats, 
-    organized by position (e.g., all QB stats first, then WR stats, etc.)
-    Within each position, players are sorted alphabetically with all their seasons
-    appearing consecutively (e.g., all of Darius Slay's seasons together in CB group)
+    Organize offensive player stats for WR and TE positions only.
+    Creates a clean CSV with specific columns including calculated age.
     """
     
-   
-    defense_df = pd.read_csv('yearly_player_stats_defense.csv')
+    # Load offensive data
     offense_df = pd.read_csv('yearly_player_stats_offense.csv')
     
-    # Get unique positions
-    defense_positions = defense_df['position'].unique()
-    offense_positions = offense_df['position'].unique()
+    # Filter for only WR and TE positions
+    wr_te_df = offense_df[offense_df['position'].isin(['WR', 'TE'])].copy()
     
-    # Define position order for defensive players
-    defense_position_order = [
-        'DE', 'DT', 'NT',  
-        'OLB', 'ILB', 'LB',  
-        'CB',  
-        'FS', 'SS', 'S',  
-        'P', 'K',  
-        'N/A'  
+    # Calculate age for each season
+    # Age = Season - Birth Year
+    wr_te_df['age'] = wr_te_df['season'] - wr_te_df['birth_year']
+    
+    # Select only the required columns
+    selected_columns = [
+        'player_id',
+        'player_name', 
+        'position',
+        'age',
+        'season',
+        'team',
+        'fantasy_points_ppr',
+        'fantasy_points_standard'
     ]
     
-    # Define position order for offensive players
-    offense_position_order = [
-        'QB',  
-        'RB', 'FB',  
-        'WR',  
-        'TE',  
-        'OL', 'OT', 'OG', 'C',  
-        'P', 'K',  
-        'N/A'  
-    ]
+    # Create the cleaned dataframe with only selected columns
+    cleaned_df = wr_te_df[selected_columns].copy()
     
-    # Create organized defensive DataFrame
-    defense_organized = []
+    # Replace NaN values with 'N/A' for better readability
+    cleaned_df = cleaned_df.fillna('N/A')
     
-    for position in defense_position_order:
-        if position in defense_positions:
-            position_data = defense_df[defense_df['position'] == position].copy()
-            if len(position_data) > 0:
-                defense_organized.append(position_data)
+    # Convert data types
+    cleaned_df['player_id'] = cleaned_df['player_id'].astype(str)
+    cleaned_df['player_name'] = cleaned_df['player_name'].astype(str)
+    cleaned_df['position'] = cleaned_df['position'].astype(str)
+    cleaned_df['team'] = cleaned_df['team'].astype(str)
     
-   
-    remaining_defense_positions = set(defense_positions) - set(defense_position_order)
-    remaining_defense_positions = [pos for pos in remaining_defense_positions if pd.notna(pos)]
-    for position in sorted(remaining_defense_positions):
-        position_data = defense_df[defense_df['position'] == position].copy()
-        if len(position_data) > 0:
-            defense_organized.append(position_data)
+    # Convert numeric columns, keeping 'N/A' for missing values
+    numeric_columns = ['age', 'season', 'fantasy_points_ppr', 'fantasy_points_standard']
+    for col in numeric_columns:
+        cleaned_df[col] = pd.to_numeric(cleaned_df[col], errors='coerce')
+        # Replace NaN with 'N/A' after conversion
+        cleaned_df[col] = cleaned_df[col].fillna('N/A')
     
-    # Combine defensive data
-    if defense_organized:
-        defense_organized_df = pd.concat(defense_organized, ignore_index=True)
-    else:
-        defense_organized_df = defense_df.copy()
+    # Round fantasy points to nearest whole number
+    cleaned_df['fantasy_points_ppr'] = cleaned_df['fantasy_points_ppr'].apply(lambda x: round(x) if x != 'N/A' else x)
+    cleaned_df['fantasy_points_standard'] = cleaned_df['fantasy_points_standard'].apply(lambda x: round(x) if x != 'N/A' else x)
     
-    # Create organized offensive DataFrame
-    offense_organized = []
+    # Sort by position (WR first, then TE), then by player name alphabetically, then by season
+    cleaned_df = cleaned_df.sort_values(['position', 'player_name', 'season'])
     
-    for position in offense_position_order:
-        if position in offense_positions:
-            position_data = offense_df[offense_df['position'] == position].copy()
-            if len(position_data) > 0:
-                offense_organized.append(position_data)
+    # Save the cleaned CSV
+    cleaned_df.to_csv('wr_te_stats_cleaned.csv', index=False)
     
-    # Handle remaining offensive positions
-    remaining_offense_positions = set(offense_positions) - set(offense_position_order)
-    remaining_offense_positions = [pos for pos in remaining_offense_positions if pd.notna(pos)]
-    for position in sorted(remaining_offense_positions):
-        position_data = offense_df[offense_df['position'] == position].copy()
-        if len(position_data) > 0:
-            offense_organized.append(position_data)
-    
-    # Combine offensive data
-    if offense_organized:
-        offense_organized_df = pd.concat(offense_organized, ignore_index=True)
-    else:
-        offense_organized_df = offense_df.copy()
-    
-    # Data type conversion
-    numeric_columns_defense = defense_organized_df.select_dtypes(include=[np.number]).columns
-    for col in numeric_columns_defense:
-        defense_organized_df[col] = pd.to_numeric(defense_organized_df[col], errors='coerce')
-    
-    numeric_columns_offense = offense_organized_df.select_dtypes(include=[np.number]).columns
-    for col in numeric_columns_offense:
-        offense_organized_df[col] = pd.to_numeric(offense_organized_df[col], errors='coerce')
-    
-    # Convert string columns
-    string_columns = ['player_id', 'player_name', 'position', 'college', 'team', 'conference', 'division']
-    for col in string_columns:
-        if col in defense_organized_df.columns:
-            defense_organized_df[col] = defense_organized_df[col].astype(str)
-        if col in offense_organized_df.columns:
-            offense_organized_df[col] = offense_organized_df[col].astype(str)
-    
-    # Convert season to integer
-    if 'season' in defense_organized_df.columns:
-        defense_organized_df['season'] = pd.to_numeric(defense_organized_df['season'], errors='coerce').astype('Int64')
-    if 'season' in offense_organized_df.columns:
-        offense_organized_df['season'] = pd.to_numeric(offense_organized_df['season'], errors='coerce').astype('Int64')
-    
-    # Sort by position, then by player name alphabetically, then by season
-    if 'season' in defense_organized_df.columns and 'player_name' in defense_organized_df.columns:
-        defense_organized_df = defense_organized_df.sort_values(['position', 'player_name', 'season'])
-    
-    if 'season' in offense_organized_df.columns and 'player_name' in offense_organized_df.columns:
-        offense_organized_df = offense_organized_df.sort_values(['position', 'player_name', 'season'])
- 
-    defense_organized_df.to_csv('defense_stats_organized.csv', index=False)
-    offense_organized_df.to_csv('offense_stats_organized.csv', index=False)
-    
-    return defense_organized_df, offense_organized_df
+    return cleaned_df
 
 if __name__ == "__main__":
-    defense_df, offense_df = organize_player_stats()
+    cleaned_df = organize_player_stats()
