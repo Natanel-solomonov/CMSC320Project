@@ -144,7 +144,10 @@ function App() {
           </p>
           
           <div className="chart-container">
-            <img src="/path-to-image-3.png" alt="Distribution of Fantasy Points" style={{width: '100%', maxWidth: '700px'}} />
+            <img src={`${process.env.PUBLIC_URL}/Distribution_of_Fantasy_Points_(PPR).png`} 
+                 alt="Distribution of Fantasy Points" 
+                 style={{width: '100%', maxWidth: '700px'}} 
+                 />
             <p className="caption">
               <strong>Figure 1:</strong> Distribution of Fantasy Points (PPR). [Describe the right-skewed distribution, 
               most players scoring low, few high performers]
@@ -152,14 +155,20 @@ function App() {
           </div>
 
           <div className="chart-container">
-            <img src="/path-to-image-4.png" alt="TE Fantasy Points Distribution" style={{width: '100%', maxWidth: '700px'}} />
+            <img 
+            src={`${process.env.PUBLIC_URL}/Distribution_of_Fantasy_Points_(PPR)_for_TEs.png`}
+            alt="TE Fantasy Points Distribution" 
+            style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
               <strong>Figure 2:</strong> Distribution of Fantasy Points for Tight Ends. [Compare to overall distribution]
             </p>
           </div>
 
           <div className="chart-container">
-            <img src="/path-to-image-5.png" alt="WR Fantasy Points Distribution" style={{width: '100%', maxWidth: '700px'}} />
+            <img 
+            src={`${process.env.PUBLIC_URL}/Distribution_of_Fantasy_Points_(PPR)_for_WRs.png`} 
+            alt="WR Fantasy Points Distribution" 
+            style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
               <strong>Figure 3:</strong> Distribution of Fantasy Points for Wide Receivers. [Note similarities/differences 
               with TE distribution]
@@ -172,7 +181,10 @@ function App() {
           </p>
 
           <div className="chart-container">
-            <img src="/path-to-image-1.png" alt="Fantasy Points by Age Group" style={{width: '100%', maxWidth: '700px'}} />
+            <img 
+            src={`${process.env.PUBLIC_URL}/Fantasy_PPR_Points_by_Age_Group.png`}
+            alt="Fantasy Points by Age Group" 
+            style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
               <strong>Figure 4:</strong> Fantasy PPR Points by Age Group. Younger players (21-25) show more outliers 
               representing breakout performances, while older age groups have more consistent medians but fewer extremes.
@@ -182,7 +194,10 @@ function App() {
           <h3>Average Performance by Age</h3>
           
           <div className="chart-container">
-            <img src="/path-to-image-6.png" alt="Average Fantasy Points by Age" style={{width: '100%', maxWidth: '700px'}} />
+            <img 
+            src={`${process.env.PUBLIC_URL}/Average_Fantasy_Points_(PPR)_by_Age.png`} 
+            alt="Average Fantasy Points by Age" 
+            style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
               <strong>Figure 5:</strong> Average Fantasy Points (PPR) by Age. [Describe the irregular pattern, 
               lack of clear linear trend, dramatic drop after age 37]
@@ -228,7 +243,10 @@ function App() {
           </div>
 
           <div className="chart-container">
-            <img src="/path-to-image-7.png" alt="Overall Age vs Fantasy Points" style={{width: '100%', maxWidth: '700px'}} />
+            <img 
+            src={`${process.env.PUBLIC_URL}/Overall_Age_vs_Fantasy_Points.png`} 
+            alt="Overall Age vs Fantasy Points" 
+            style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
               <strong>Figure 6:</strong> Overall Age vs Average Fantasy Points (PPR). The line plot shows high variability 
               with no clear linear trend, supporting the negligible correlation coefficient.
@@ -236,7 +254,10 @@ function App() {
           </div>
 
           <div className="chart-container">
-            <img src="/path-to-image-8.png" alt="TE Age vs Fantasy Points" style={{width: '100%', maxWidth: '700px'}} />
+            <img 
+            src={`${process.env.PUBLIC_URL}/TE_Age_vs_Fantasy_Points.png`} 
+            alt="TE Age vs Fantasy Points" 
+            style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
               <strong>Figure 7:</strong> TE Age vs Average Fantasy Points. Tight ends show a gradual upward trajectory 
               from ages 22-37 before sharp decline, explaining the slightly stronger correlation (r = 0.128).
@@ -244,7 +265,10 @@ function App() {
           </div>
 
           <div className="chart-container">
-            <img src="/path-to-image-9.png" alt="WR Age vs Fantasy Points" style={{width: '100%', maxWidth: '700px'}} />
+            <img 
+            src={`${process.env.PUBLIC_URL}/WR_Age_vs_Fantasy_Points.png`}
+            alt="WR Age vs Fantasy Points" 
+            style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
               <strong>Figure 8:</strong> WR Age vs Average Fantasy Points. Wide receivers exhibit extreme volatility 
               with dramatic swings between adjacent ages, resulting in negligible correlation.
@@ -257,7 +281,10 @@ function App() {
           </p>
 
           <div className="chart-container">
-            <img src="/path-to-image-2.png" alt="Predicted vs Actual" style={{width: '100%', maxWidth: '700px'}} />
+            <img 
+            src={`${process.env.PUBLIC_URL}/Fantasy_Points_vs_Age_predicted_vs_actual.png`}
+            alt="Predicted vs Actual" 
+            style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
               <strong>Figure 9:</strong> Polynomial Regression - Fantasy Points vs Age. The nearly flat regression line 
               with R² = 0.0126 indicates age explains only 1% of fantasy point variance.
