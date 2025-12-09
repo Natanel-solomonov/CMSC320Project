@@ -56,13 +56,28 @@ function App() {
         <section id="introduction">
           <h2>Introduction</h2>
           <p>
-            [Introduce the research question: Does age affect NFL WR/TE fantasy performance?]
-          </p>
-          <p>
-            [Why this matters for fantasy football, player evaluation, team management]
-          </p>
-          <p>
-            [Brief overview of what analysis you'll conduct]
+            This project investigates the research question:{" "}
+            <strong>
+              Does age affect NFL wide receiver and tight end fantasy
+              performance?
+            </strong>{" "}
+            Understanding how player age correlates with fantasy production is
+            valuable not only for <strong>fantasy football managers</strong>{" "}
+            looking to optimize draft strategies and manage roster risk, but
+            also for broader{" "}
+            <strong>player evaluation and team decision-making</strong>, where
+            aging influences contracts, depth-chart planning, and long-term
+            roster construction. To answer this question, the analysis will
+            examine <strong>multi-year NFL WR/TE performance data</strong>,
+            compare fantasy output across age groups, and evaluate trends using
+            statistical methods such as{" "}
+            <strong>
+              correlation analysis, regression modeling, and visualization of
+              performance trajectories
+            </strong>
+            . This approach will help identify whether age is a meaningful
+            predictor of fantasy performance and where key performance drop-offs
+            or peaks occur.
           </p>
         </section>
 
@@ -72,20 +87,69 @@ function App() {
 
         <section id="data-curation">
           <h2>Data Curation</h2>
-          
+
           <h3>Data Source</h3>
           <p>
-            Dataset: <a href="https://www.kaggle.com/datasets/philiphyde1/nfl-stats-1999-2022/data" target="_blank" rel="noopener noreferrer">NFL Stats 1999-2022 (Kaggle)</a>
+            Dataset:{" "}
+            <a
+              href="https://www.kaggle.com/datasets/philiphyde1/nfl-stats-1999-2022/data"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              NFL Stats 1999-2022 (Kaggle)
+            </a>
           </p>
           <p>
-            [Explain what the dataset contains: player stats from 2012-2024, why it's comprehensive]
+            The <strong>offense_stats_organized.csv</strong> dataset provides a
+            comprehensive foundation for our age-performance analysis. The
+            dataset contains <strong>7,133 player-season observations</strong>{" "}
+            spanning <strong>13 seasons (2012-2024)</strong>, covering{" "}
+            <strong>1,600 unique players</strong> across multiple positions.
+            This extensive temporal coverage allows us to track player
+            performance trajectories across different career stages, from
+            rookies entering the league to veterans in their late 30s. The
+            dataset includes <strong>660 columns</strong> of detailed
+            statistics, providing rich context for each player's performance
+            including receiving yards, touchdowns, targets, receptions, and
+            fantasy point calculations. The multi-year structure enables
+            longitudinal analysis, allowing us to observe how individual
+            players' fantasy production changes as they age, rather than relying
+            solely on cross-sectional comparisons. This comprehensive coverage
+            across seasons, players, and statistical dimensions makes the
+            dataset well-suited for investigating age-related performance
+            patterns in NFL wide receivers and tight ends.
           </p>
-          
+
           <h3>Data Preprocessing</h3>
           <p>
-            [Describe filtering for WR/TE positions, calculating age, selecting relevant columns]
+            To focus our analysis on the specific research question, we
+            performed targeted data cleaning and filtering. The preprocessing
+            pipeline filters for <strong>WR and TE positions only</strong>,
+            calculates player age for each season, selects relevant columns,
+            handles missing values, and organizes the data for analysis. This
+            process transforms the raw dataset from 7,133 observations across
+            660 columns into a focused dataset of 4,083 WR/TE player-season
+            records with only the essential variables needed for age-performance
+            analysis.
           </p>
-          
+          <p>
+            The cleaning process works by first filtering the dataset to include
+            only wide receivers and tight ends, as these are the positions of
+            interest for our research question. We then calculate each player's
+            age during each season by subtracting their birth year from the
+            season year. This age calculation is crucial for our analysis, as it
+            allows us to examine performance patterns across different age
+            groups. Next, we select only the columns relevant to our study:
+            player identification, position, age, season, team, and fantasy
+            point metrics. Missing values are replaced with 'N/A' to clearly
+            indicate data gaps rather than leaving them blank. Fantasy points
+            are rounded to whole numbers for cleaner presentation. Finally, the
+            data is sorted by position, player name, and season to ensure all of
+            a player's seasons appear consecutively, making it easier to track
+            individual career trajectories. This focused preprocessing helps us
+            hone in on exactly the data we need to answer our research question
+            about age's impact on fantasy performance.
+          </p>          
           <div className="code-block">
             <pre>
               <code>
@@ -163,24 +227,63 @@ function App() {
                   <th>Season</th>
                   <th>Team</th>
                   <th>Fantasy Points (PPR)</th>
+                  <th>Fantasy Points (Standard)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>[Example]</td>
+                  <td>Ja'Marr Chase</td>
                   <td>WR</td>
-                  <td>25</td>
-                  <td>2023</td>
-                  <td>KC</td>
-                  <td>142</td>
+                  <td>21</td>
+                  <td>2021</td>
+                  <td>CIN</td>
+                  <td>292</td>
+                  <td>211</td>
                 </tr>
                 <tr>
-                  <td>[Example]</td>
+                  <td>Ja'Marr Chase</td>
+                  <td>WR</td>
+                  <td>23</td>
+                  <td>2023</td>
+                  <td>CIN</td>
+                  <td>252</td>
+                  <td>155</td>
+                </tr>
+                <tr>
+                  <td>Stefon Diggs</td>
+                  <td>WR</td>
+                  <td>22</td>
+                  <td>2015</td>
+                  <td>MIN</td>
+                  <td>143</td>
+                  <td>91</td>
+                </tr>
+                <tr>
+                  <td>Stefon Diggs</td>
+                  <td>WR</td>
+                  <td>25</td>
+                  <td>2018</td>
+                  <td>MIN</td>
+                  <td>260</td>
+                  <td>158</td>
+                </tr>
+                <tr>
+                  <td>Travis Kelce</td>
                   <td>TE</td>
                   <td>28</td>
-                  <td>2022</td>
-                  <td>SF</td>
-                  <td>87</td>
+                  <td>2017</td>
+                  <td>KC</td>
+                  <td>228</td>
+                  <td>144</td>
+                </tr>
+                <tr>
+                  <td>Travis Kelce</td>
+                  <td>TE</td>
+                  <td>34</td>
+                  <td>2023</td>
+                  <td>KC</td>
+                  <td>214</td>
+                  <td>121</td>
                 </tr>
               </tbody>
             </table>
@@ -589,7 +692,7 @@ pearson_correlation()
 
           <h3>Polynomial Regression</h3>
           <p>
-            After fitting the polynomail regression model to look at the effects of age on fantasy points, it is clear that there is almost no 
+            After fitting the polynomial regression model to look at the effects of age on fantasy points, it is clear that there is almost no 
             relationship between the two categories given the line is almost flat with a slight curve. Also, looking that the r^2 score, it had a 
             0.0126 which means that the model explains about 1% of the variation in fantasy points.
           </p>
