@@ -211,13 +211,26 @@ function App() {
           
           <h3>ANOVA Test</h3>
           <p>
-            [Describe ANOVA test comparing mean fantasy points across age groups]
+            To address the issue of repeated observations (players having multiple seasons), we calculated
+            each player's mean age across their career. We then separated players into distinct age groups based 
+            on the calculated average age and performed a one-way ANOVA test to determine if there were statistically
+            significant differences in fantasy points between age groups.
           </p>
           <p>
-            <strong>Results:</strong> [P-value and interpretation]
+            <strong>Results:</strong> 4.262567274305378e-09
+          </p>
+            <img 
+            src={`${process.env.PUBLIC_URL}/Fantasy_PPR_Points_by_Age_Group.png`} 
+            alt="Fantasy Points by Age Group" 
+            style={{width: '100%', maxWidth: '700px'}} />
+          <p className="caption">
+              <strong>Figure 6:</strong> Distribution of Average Fantasy Points across Age Groups
           </p>
           <p>
-            [Conclusion about statistical significance of age groups]
+            After conducting a one-way ANOVA test to determine if fantasy points differ significantly by age group,
+            it was determined that the analysis yielded a p-value of 4.26 x 10^-9. This is well below the significance
+            threshold of 0.05, thus we reject the null hypothesis that all age groups perform equally. This result confirms that age does
+            play a factor in the fantasy points a player will score. 
           </p>
         </section>
 
@@ -248,7 +261,7 @@ function App() {
             alt="Overall Age vs Fantasy Points" 
             style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
-              <strong>Figure 6:</strong> Overall Age vs Average Fantasy Points (PPR). The line plot shows high variability 
+              <strong>Figure 7:</strong> Overall Age vs Average Fantasy Points (PPR). The line plot shows high variability 
               with no clear linear trend, supporting the negligible correlation coefficient.
             </p>
           </div>
@@ -259,7 +272,7 @@ function App() {
             alt="TE Age vs Fantasy Points" 
             style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
-              <strong>Figure 7:</strong> TE Age vs Average Fantasy Points. Tight ends show a gradual upward trajectory 
+              <strong>Figure 8:</strong> TE Age vs Average Fantasy Points. Tight ends show a gradual upward trajectory 
               from ages 22-37 before sharp decline, explaining the slightly stronger correlation (r = 0.128).
             </p>
           </div>
@@ -270,7 +283,7 @@ function App() {
             alt="WR Age vs Fantasy Points" 
             style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
-              <strong>Figure 8:</strong> WR Age vs Average Fantasy Points. Wide receivers exhibit extreme volatility 
+              <strong>Figure 9:</strong> WR Age vs Average Fantasy Points. Wide receivers exhibit extreme volatility 
               with dramatic swings between adjacent ages, resulting in negligible correlation.
             </p>
           </div>
@@ -286,7 +299,7 @@ function App() {
             alt="Predicted vs Actual" 
             style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
-              <strong>Figure 9:</strong> Polynomial Regression - Fantasy Points vs Age. The nearly flat regression line 
+              <strong>Figure 10:</strong> Polynomial Regression - Fantasy Points vs Age. The nearly flat regression line 
               with R² = 0.0126 indicates age explains only 1% of fantasy point variance.
             </p>
           </div>
@@ -295,7 +308,7 @@ function App() {
             <p><strong>Polynomial Regression Performance:</strong></p>
             <ul>
               <li><strong>R² Score:</strong> 0.0126 (explains only 1% of variance)</li>
-              <li><strong>MSE:</strong> [value]</li>
+              <li><strong>MSE:</strong> 2407.393053726313</li>
             </ul>
             <p>
               The near-zero R² confirms that age alone is insufficient for predicting fantasy performance.
