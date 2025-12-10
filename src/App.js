@@ -53,7 +53,9 @@ function App() {
           <div className="contribution-item">
             <h3>Anthony van Rheenen</h3>
             <ul>
-              <li><strong>A: main point</strong> — [1-2 sentence description ]</li>
+              <li><strong>Descriptive Statistics</strong> — Summarized initial data while collecting important information about the dataset.</li>
+              <li><strong>Data Visualization</strong> — Plotted data to help understand and visualize it.</li>
+              <li><strong>K-Means Clustering</strong> — Ran K-Means clustering on the data to discover important relations between player position, age, and fantasy points.</li>
               {/*         COPY AND PASTE THIS FORMAT TO ADD MORE POINTS:   <li><strong> main point </strong> desciption     */}
             </ul>
           </div>
