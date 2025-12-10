@@ -979,16 +979,52 @@ kmeans_clustering()`}
 
           <h3>Discussion</h3>
           <p>
-            [Elaborate on why age has minimal predictive power. Discuss confounding variables like 
-            playing time, team quality, coaching scheme, injury history, talent level]
+            The minimal predictive power of age (r = 0.055, R² = 0.0126) can be
+            explained by confounding variables that dominate fantasy
+            performance.
+            <strong>Playing time</strong> is the most critical factor: a
+            35-year-old receiver with 150 targets will outscore a 25-year-old
+            with 30 targets regardless of age-related efficiency changes.{" "}
+            <strong>Team quality, offensive scheme, and coaching</strong>{" "}
+            heavily influence production, as players in pass-heavy offenses
+            generate more fantasy points than those in run-first systems.{" "}
+            <strong>Injury history</strong> introduces significant variability,
+            and <strong>talent level</strong> varies dramatically across
+            players, with elite talent sustaining high performance well into a
+            player's 30s. These factors interact in complex ways, explaining why
+            age alone explains only 1% of fantasy point variance.
           </p>
           <p>
-            [Explain practical implications: fantasy managers should prioritize opportunity and role 
-            over age when evaluating players in the 22-35 range]
+            For <strong>fantasy football managers</strong>, these findings show
+            that when evaluating players in the 22-35 age range, managers should
+            prioritize <strong>opportunity and role</strong> over age. A
+            33-year-old receiver who is his team's clear WR1 represents a better
+            fantasy asset than a 24-year-old buried on the depth chart. Managers
+            should focus on target share, snap percentage, and red-zone usage
+            rather than age-based assumptions. The data shows players can
+            maintain elite production well into their early 30s, with dramatic
+            drop-off typically occurring only after age 37. Age should be a
+            secondary consideration, used primarily to identify decline risks
+            for players over 35.
           </p>
           <p>
-            [Discuss the clustering findings: natural player archetypes exist based on position and 
-            career stage, but age alone doesn't determine fantasy value]
+            The <strong>K-Means clustering analysis</strong> revealed that
+            natural player archetypes exist, but they are more strongly defined
+            by <strong>position and career stage</strong> than by age alone. The
+            clustering identified five distinct groups: Young WR (avg age 23.97,
+            73.4 PPR points), Prime WR (avg age 28.45, 84.9 PPR points), Young
+            TE (avg age 24.21, 47.1 PPR points), Veteran Mixed (avg age 33.38,
+            72.7 PPR points), and Older TE (avg age 28.56, 59.4 PPR points).
+            These clusters demonstrate that{" "}
+            <strong>position matters more than age</strong>: WRs consistently
+            outscore TEs across all age groups, with Prime WRs averaging 84.9
+            points compared to Older TEs at 59.4 points despite similar average
+            ages. The Veteran Mixed cluster shows players averaging 33.38 years
+            old still producing 72.7 PPR points, comparable to Young WRs. This
+            suggests that{" "}
+            <strong>age alone doesn't determine fantasy value</strong>; instead,
+            the combination of position, opportunity, talent, and role creates
+            distinct player archetypes.
           </p>
 
           <h3>Limitations</h3>
