@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/CMSC320Project/static/css/main.883aa39f.css",
-    "main.js": "/CMSC320Project/static/js/main.29ecc596.js",
+    "main.js": "/CMSC320Project/static/js/main.afe32a9c.js",
     "index.html": "/CMSC320Project/index.html",
     "main.883aa39f.css.map": "/CMSC320Project/static/css/main.883aa39f.css.map",
-    "main.29ecc596.js.map": "/CMSC320Project/static/js/main.29ecc596.js.map"
+    "main.afe32a9c.js.map": "/CMSC320Project/static/js/main.afe32a9c.js.map"
   },
   "entrypoints": [
     "static/css/main.883aa39f.css",
-    "static/js/main.29ecc596.js"
+    "static/js/main.afe32a9c.js"
   ]
 }
