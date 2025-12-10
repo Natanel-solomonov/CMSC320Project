@@ -1135,14 +1135,16 @@ kmeans_clustering()`}
             <li>
               Hyde, Philip. (2022). NFL Stats 1999-2022. Kaggle. 
               <a href="https://www.kaggle.com/datasets/philiphyde1/nfl-stats-1999-2022/data" target="_blank" rel="noopener noreferrer">
-                https://www.kaggle.com/datasets/philiphyde1/nfl-stats-1999-2022/data
+                 https://www.kaggle.com/datasets/philiphyde1/nfl-stats-1999-2022/data
               </a>
             </li>
             <li>
-              scikit-learn developers. (2025). scikit-learn: Machine Learning in Python (Version 1.7.2). scikit-learn. https://scikit-learn.org/stable/
+              scikit-learn developers. (2025). scikit-learn: Machine Learning in Python (Version 1.7.2). scikit-learn. 
+              <a href= "https://scikit-learn.org/stable/" target="_blank" rel="noopener noreferrer">https://scikit-learn.org/stable/</a>
             </li>
             <li>
-              Alam, Fardina. (2025). CMSC320: Introduction to Data Science - Fall 2025. University of Maryland, Department of Computer Science. https://cmsc320.github.io/
+              Alam, Fardina. (2025). CMSC320: Introduction to Data Science - Fall 2025. University of Maryland, Department of Computer Science. 
+              <a href= "https://cmsc320.github.io/" target="_blank" rel="noopener noreferrer">https://cmsc320.github.io/</a>
             </li>
           </ol>
         </section>
