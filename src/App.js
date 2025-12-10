@@ -111,6 +111,7 @@ function App() {
             </a>
           </p>
           <p>
+            To begin answering our research question, we looked for a data set with the information we needed, then cleaned it so it would be ready for processing.
             The <strong>offense_stats_organized.csv</strong> dataset provides a
             comprehensive foundation for our age-performance analysis. The
             dataset contains <strong>7,133 player-season observations</strong>{" "}
@@ -305,7 +306,7 @@ function App() {
         {/* Exploratory Data Analysis Section */}
         <section id="eda">
           <h2>Exploratory Data Analysis</h2>
-          
+          <h4>After preparing and cleaning the dataset, we conducted exploratory data analysis to better understand the trends in the data before continuing statistical tests.</h4>
           <h3>Descriptive Statistics</h3>
           <p>
             Looking at the plots of the distributions of fantasy points, it's clear to see that while there are more wider recievers than tight ends, 
@@ -469,7 +470,7 @@ if __name__ == "__main__":
 
           <h3>Age Group Analysis</h3>
           <p>
-            Looking at the 21-25 age group, the median of fantasy points PPR is less than other age groups. As a player ages, the median tends to increase 
+            With these initial findings, we looked into whether grouping players by age showerd clearer patterns. Looking at the 21-25 age group, the median of fantasy points PPR is less than other age groups. As a player ages, the median tends to increase 
             until they fall into the 36-40 year age range. Although this is the case, it can be seen that younger players in the 21-25 age range have more 
             outliers than the others. In fact, there are almost zero outliers in the other age ranges. A causing factor of this could be the amount of playing 
             time they receive. As a player gets older, they tend to start more than the younger players. These outliers could represent the cases where young 
@@ -548,7 +549,7 @@ if __name__ == "__main__":
         {/* Hypothesis Testing Section */}
         <section id="hypothesis-testing">
           <h2>Hypothesis Testing</h2>
-          
+          <h4>While the plots seemed to show patters, we used hypothesis testing to determine whether the observed differences were actually statistically significant.</h4>
           <h3>ANOVA Test</h3>
           <p>
             To address the issue of repeated observations (players having multiple seasons), we calculated
