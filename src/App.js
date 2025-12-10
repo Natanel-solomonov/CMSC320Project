@@ -53,9 +53,9 @@ function App() {
           <div className="contribution-item">
             <h3>Anthony van Rheenen</h3>
             <ul>
-              <li><strong>Descriptive Statistics</strong> — Summarized initial data while collecting important information about the dataset.</li>
+              <li><strong>Data Exploration and Summary Statistics</strong> — Collected descriptive statistics of the dataset. Summarized initial data while collecting important information about the dataset.</li>
               <li><strong>Data Visualization</strong> — Plotted data to help understand and visualize it.</li>
-              <li><strong>K-Means Clustering</strong> — Ran K-Means clustering on the data to discover important relations between player position, age, and fantasy points.</li>
+              <li><strong>ML Algorithm Training and Test Data Analysis, K-Means Clustering</strong> — Ran K-Means clustering on the data to discover important relations between player position, age, and fantasy points.</li>
               {/*         COPY AND PASTE THIS FORMAT TO ADD MORE POINTS:   <li><strong> main point </strong> desciption     */}
             </ul>
           </div>
