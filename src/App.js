@@ -442,8 +442,7 @@ if __name__ == "__main__":
                  style={{width: '100%', maxWidth: '700px'}} 
                  />
             <p className="caption">
-              <strong>Figure 1:</strong> Distribution of Fantasy Points (PPR). [Describe the right-skewed distribution, 
-              most players scoring low, few high performers]
+              <strong>Figure 1:</strong> Distribution of Fantasy Points (PPR). Data is right-skewed, with the vast majority of players being low scorers.
             </p>
           </div>
 
@@ -453,7 +452,7 @@ if __name__ == "__main__":
             alt="TE Fantasy Points Distribution" 
             style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
-              <strong>Figure 2:</strong> Distribution of Fantasy Points for Tight Ends. [Compare to overall distribution]
+              <strong>Figure 2:</strong> Distribution of Fantasy Points for Tight Ends. Follows a very similar distribution to the overall population.
             </p>
           </div>
 
@@ -463,8 +462,7 @@ if __name__ == "__main__":
             alt="WR Fantasy Points Distribution" 
             style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
-              <strong>Figure 3:</strong> Distribution of Fantasy Points for Wide Receivers. [Note similarities/differences 
-              with TE distribution]
+              <strong>Figure 3:</strong> Distribution of Fantasy Points for Wide Receivers. Follows a very similar distribution to the overall population, but notably with lower point amounts than TE.
             </p>
           </div>
 
@@ -538,8 +536,7 @@ if __name__ == "__main__":
             alt="Average Fantasy Points by Age" 
             style={{width: '100%', maxWidth: '700px'}} />
             <p className="caption">
-              <strong>Figure 5:</strong> Average Fantasy Points (PPR) by Age. [Describe the irregular pattern, 
-              lack of clear linear trend, dramatic drop after age 37]
+              <strong>Figure 5:</strong> Average Fantasy Points (PPR) by Age. The distribution doesn't seem to follow any clear patterns, except for a clear drop off in points in players older that 37.
             </p>
           </div>
         </section>
@@ -947,22 +944,32 @@ kmeans_clustering()`}
         <section id="visualization">
           <h2>Key Visualizations Summary</h2>
           <p>
-            [Summarize the main visual insights from your analysis]
+            As shown by all the diagrams so far, there is negligible correlation between age and fantasy points.
+            For instance, even though there are slight correlations between fantasy points and age in figure 4's
+            cat and whisker plot, there is no clear up or downward trends in figure 5, and the r correlation of
+            pearson correlation further reinforces that with their low value. Similarly, this trend of no clear
+            correlation, or if there is even one it is negligible, is shown in all graphs so far.
           </p>
           
           <h3>Distribution Patterns</h3>
           <p>
-            [Discuss what the distribution histograms revealed about fantasy point scoring patterns]
-          </p>
-
-          <h3>Age-Performance Relationship</h3>
-          <p>
-            [Explain what the scatter plots and line plots show about the weak age-performance correlation]
+            As shown in the visualization summary, the distribution patterns of the graphs aren't entirely clear.
+            For instance in figure 5, the fantasy points decrease as one ages towards 22.5 from 20, but then increases
+            again and then has random drops, and so on. This therefore means that there is no straightforward distribution
+            pattern. It is for this reason why the r^2 correlation score for pearson correlation is so low, because
+            there is a very lacking linear trend. Therefore, providing the basis of the conclusion that there is no
+            correlation between age and fantasy points, and that there are more variables, which may
+            impact it more.
           </p>
 
           <h3>Position Differences</h3>
           <p>
-            [Highlight key differences between WR and TE performance patterns across age groups]
+            There doesn't seem to be much apparent differences between the performance of age vs fantasy points for
+            TE and WR as shown in figure 2 and 3. The only difference which may be there is the fact that WRs seem to have a higher point scaling
+            which could be due to other counfounding factors. However, in terms of how they trend as age increases
+            is the same. Concurrently, in examining them in figure 7 and 8, it shows that there is still no real correlation
+            as the line graphs seem to go up and down sporadically. Hence further supporting the claim that there is no
+            real trend between fantasy points and age even between positions.
           </p>
         </section>
 
