@@ -23,26 +23,30 @@ function App() {
           <div className="contribution-item">
             <h3>Vibhas Ramani</h3>
             <ul>
-              <li><strong>Website Skeleton</strong> — Made the skeleton for this website for us to develop: essentially made a rudimentary outline which we could then fill in with info. I also got it deployed on github pages</li>
+              <li><strong>Website Skeleton</strong> — Made the skeleton for this website for us to develop: essentially made a rudimentary outline which we could then fill in with info. I also got it deployed on github pages.</li>
               <li><strong>Version Control</strong> — helped maintain the git version control of the website. I aided with conflicts, errors causing github pages to not work, and ensuring everyone's info was cohesively together on the latest branch.</li>
-              <li><strong>Pearson Correlation</strong> — I did everything relating to the pearson correlation of the statistics we had, showcased my insights and conclusions of it and graphed it</li>
+              <li><strong>Pearson Correlation</strong> — I did everything relating to the pearson correlation of the statistics we had, showcased my insights and conclusions of it and graphed it.</li>
               <li><strong>Random Forest</strong> — I used Random Forest on the data we had to approve or deny the conclusion I made prior with pearson_correlation, explained why I used it and showed my insights and conclusions of it.</li>
-              <li><strong>Summary of parts</strong> — Contributed to D, E, F, G, H shown on final project pdf on elms</li>
+              <li><strong>Summary of parts</strong> — Contributed to D, E, F, G, H shown on final project pdf on elms.</li>
               {/*         COPY AND PASTE THIS FORMAT TO ADD MORE POINTS:   <li><strong> main point </strong> desciption     */}
             </ul>
           </div>
           <div className="contribution-item">
             <h3>Nathan Danko</h3>
             <ul>
-              <li><strong>Hypothesis testing</strong> — Conducted a one-way Anova test to determine if there was a relationship between age groups and fantasy points</li>
-              <li><strong>Polynomial Regression</strong> — Used the model to determine the effects of Age on a players Fantasy points</li>
+              <li><strong>Hypothesis testing</strong> — Conducted a one-way Anova test to determine if there was a relationship between age groups and fantasy points, showcased insights and conclutions, and graphed the data.</li>
+              <li><strong>Polynomial Regression</strong> — Used Polynomial Regression model to determine the effects of Age on a players Fantasy points.</li>
+              <li><strong>Summary of Parts</strong> — Contributed to B, C, D, E shown on final project pdf on elms.</li>
               {/*         COPY AND PASTE THIS FORMAT TO ADD MORE POINTS:   <li><strong> main point </strong> desciption     */}
             </ul>
           </div>
           <div className="contribution-item">
             <h3>Natanel Solomonov</h3>
             <ul>
-              <li><strong>A: main point</strong> — [1-2 sentence description ]</li>
+              <li><strong>Data Curation/Pre Processing</strong> — I found a complete dataset on kaggle of exhaustive statisitcs from NFL players from 2012-2014, I then determined what data was ultra important for our study such as age and overall fantasy points. I then cleaned the data and narrowed it down to this information only for a clean and reliable study.</li>
+              <li><strong>Conclusion</strong> — I made an overall conclusion, based on our testing and analysis that age did not play a signficant factor in fantasy performance in comparison to other important factors.</li>
+              <li><strong>Summary of parts</strong> — Contributed to the Introduction (G), Data Curation (B), Conclusion (F) as shown in the final project pdf on elms. </li>
+
               {/*         COPY AND PASTE THIS FORMAT TO ADD MORE POINTS:   <li><strong> main point </strong> desciption     */}
             </ul>
           </div>
@@ -71,7 +75,7 @@ function App() {
             looking to optimize draft strategies and manage roster risk, but
             also for broader{" "}
             <strong>player evaluation and team decision-making</strong>, where
-            aging influences contracts, depth-chart planning, and long-term
+            ageing influences contracts, depth-chart planning, and long-term
             roster construction. To answer this question, the analysis will
             examine <strong>multi-year NFL WR/TE performance data</strong>,
             compare fantasy output across age groups, and evaluate trends using
