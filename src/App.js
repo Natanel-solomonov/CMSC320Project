@@ -25,6 +25,7 @@ function App() {
             <ul>
               <li><strong>Website Skeleton</strong> — Made the skeleton for this website for us to develop: essentially made a rudimentary outline which we could then fill in with info. I also got it deployed on github pages.</li>
               <li><strong>Version Control</strong> — helped maintain the git version control of the website. I aided with conflicts, errors causing github pages to not work, and ensuring everyone's info was cohesively together on the latest branch.</li>
+              <li><strong>Visualization Section</strong> — Wrote the visualization section of the website.</li>
               <li><strong>Pearson Correlation</strong> — I did everything relating to the pearson correlation of the statistics we had, showcased my insights and conclusions of it and graphed it.</li>
               <li><strong>Random Forest</strong> — I used Random Forest on the data we had to approve or deny the conclusion I made prior with pearson_correlation, explained why I used it and showed my insights and conclusions of it.</li>
               <li><strong>Summary of parts</strong> — Contributed to D, E, F, G, H shown on final project pdf on elms.</li>
@@ -79,7 +80,7 @@ function App() {
             looking to optimize draft strategies and manage roster risk, but
             also for broader{" "}
             <strong>player evaluation and team decision-making</strong>, where
-            ageing influences contracts, depth-chart planning, and long-term
+            aging influences contracts, depth-chart planning, and long-term
             roster construction. To answer this question, the analysis will
             examine <strong>multi-year NFL WR/TE performance data</strong>,
             compare fantasy output across age groups, and evaluate trends using
@@ -470,7 +471,7 @@ if __name__ == "__main__":
 
           <h3>Age Group Analysis</h3>
           <p>
-            With these initial findings, we looked into whether grouping players by age showerd clearer patterns. Looking at the 21-25 age group, the median of fantasy points PPR is less than other age groups. As a player ages, the median tends to increase 
+            With these initial findings, we looked into whether grouping players by age showed clearer patterns. Looking at the 21-25 age group, the median of fantasy points PPR is less than other age groups. As a player ages, the median tends to increase 
             until they fall into the 36-40 year age range. Although this is the case, it can be seen that younger players in the 21-25 age range have more 
             outliers than the others. In fact, there are almost zero outliers in the other age ranges. A causing factor of this could be the amount of playing 
             time they receive. As a player gets older, they tend to start more than the younger players. These outliers could represent the cases where young 
@@ -548,7 +549,7 @@ if __name__ == "__main__":
         {/* Hypothesis Testing Section */}
         <section id="hypothesis-testing">
           <h2>Hypothesis Testing</h2>
-          <h4>While the plots seemed to show patters, we used hypothesis testing to determine whether the observed differences were actually statistically significant.</h4>
+          <h4>While the plots seemed to show patterns, we used hypothesis testing to determine whether the observed differences were actually statistically significant.</h4>
           <h3>ANOVA Test</h3>
           <p>
             To address the issue of repeated observations (players having multiple seasons), we calculated
@@ -880,7 +881,7 @@ rf_pipeline = Pipeline(steps=[
 
           <h3>K-Means Clustering</h3>
           <p>
-            <strong>Reasoning:</strong> Finally, rather tahn trying to outright predict fantasy points, we used clustering to see if any natural groups might form and whether these clusters align with performance differences. Clustering analysis was used to identify natural groupings in the data 
+            <strong>Reasoning:</strong> Finally, rather than trying to outright predict fantasy points, we used clustering to see if any natural groups might form and whether these clusters align with performance differences. Clustering analysis was used to identify natural groupings in the data 
             based on age and position, and to examine if distinct player archetypes emerge.
           </p>
 
@@ -958,7 +959,7 @@ kmeans_clustering()`}
             As shown in the visualization summary, the distribution patterns of the graphs aren't entirely clear.
             For instance in figure 5, the fantasy points decrease as one ages towards 22.5 from 20, but then increases
             again and then has random drops, and so on. This therefore means that there is no straightforward distribution
-            pattern. It is for this reason why the r^2 correlation score for pearson correlation is so low, because
+            pattern. It is for this reason why the r correlation score for pearson correlation is so low, because
             there is a very lacking linear trend. Therefore, providing the basis of the conclusion that there is no
             correlation between age and fantasy points, and that there are more variables, which may
             impact it more.
