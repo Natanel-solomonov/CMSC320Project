@@ -57,6 +57,7 @@ function App() {
               <li><strong>Data Visualization</strong> — Plotted data to help understand and visualize it.</li>
               <li><strong>ML Algorithm Training and Test Data Analysis, K-Means Clustering</strong> — Ran K-Means clustering on the data to discover important relations between player position, age, and fantasy points.</li>
               <li><strong>Website Formatting and Flow</strong> — Worked on the website formatting and ensuring a smooth narrative flow between sections.</li>
+              <li><strong>Summary of Parts</strong> - Contributed to C, D, E, F, and G</li>
               {/*         COPY AND PASTE THIS FORMAT TO ADD MORE POINTS:   <li><strong> main point </strong> desciption     */}
             </ul>
           </div>
