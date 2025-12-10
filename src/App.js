@@ -1139,10 +1139,10 @@ kmeans_clustering()`}
               </a>
             </li>
             <li>
-              Pedregosa, F., et al. (2011). Scikit-learn: Machine Learning in Python. Journal of Machine Learning Research, 12, 2825-2830.
+              scikit-learn developers. (2025). scikit-learn: Machine Learning in Python (Version 1.7.2). scikit-learn. https://scikit-learn.org/stable/
             </li>
             <li>
-              McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the 9th Python in Science Conference, 56-61.
+              Alam, Fardina. (2025). CMSC320: Introduction to Data Science - Fall 2025. University of Maryland, Department of Computer Science. https://cmsc320.github.io/
             </li>
           </ol>
         </section>
