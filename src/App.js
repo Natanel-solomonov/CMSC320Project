@@ -95,7 +95,7 @@ function App() {
         {/* Data Curation Section */}
         {/* TO ADD MORE POINTS WITH THIS SAME SPACING U SEE, SIMPLY USE THE <p> TAG AND WRITE IN, IF U WANT TO MAKE ANYTHING 
         BOLD USE AS SHOWN PRIOR <strong>. IF U WANT EVEN BIGGER SPACING THAN WHAT COMES FROM USING SEPARATE TAGS USE <br>*/}
-
+        <hr />
         <section id="data-curation">
           <h2>Data Curation</h2>
 
@@ -301,6 +301,7 @@ function App() {
           </div>
         </section>
 
+        <hr />
         {/* Exploratory Data Analysis Section */}
         <section id="eda">
           <h2>Exploratory Data Analysis</h2>
@@ -541,6 +542,8 @@ if __name__ == "__main__":
             </p>
           </div>
         </section>
+        
+        <hr />
 
         {/* Hypothesis Testing Section */}
         <section id="hypothesis-testing">
@@ -563,7 +566,8 @@ if __name__ == "__main__":
             play a factor in the fantasy points a player will score. 
           </p>
         </section>
-
+        
+        <hr />
         {/* Primary Analysis Section */}
         <section id="primary-analysis">
           <h2>Primary Analysis</h2>
@@ -768,6 +772,7 @@ plt.show()
           </div>
         </section>
 
+        <hr />
         {/* Machine Learning Models Section */}
         <section id="ml-models">
           <h2>Machine Learning Models</h2>
@@ -936,6 +941,7 @@ kmeans_clustering()`}
           </p>
         </section>
 
+        <hr />
         {/* Visualization Section */}
         <section id="visualization">
           <h2>Key Visualizations Summary</h2>
@@ -959,6 +965,7 @@ kmeans_clustering()`}
           </p>
         </section>
 
+        <hr />
         {/* Insights and Conclusions Section */}
         <section id="conclusion">
           <h2>Insights and Conclusions</h2>
@@ -1108,7 +1115,8 @@ kmeans_clustering()`}
             more than age.
           </p>
         </section>
-
+        
+        <hr />
         {/* References Section */}
         <section id="references">
           <h2>References</h2>
