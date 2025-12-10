@@ -575,7 +575,7 @@ if __name__ == "__main__":
             <strong>Method:</strong> Pearson Correlation Coefficient
           </p>
           <p>
-            The pearson correlation analysis revealed negligible but statistically significant relationships between player age and fantasy football 
+            With evidence that age groups may differ, we then measured the strength of the relationship between age and fantasy points using correlation analysis. The pearson correlation analysis revealed negligible but statistically significant relationships between player age and fantasy football 
             performance for offensive players. This can be concluded from the pearson results where the r {'<'} 0.1 therefore showing negligible linear 
             correlation, and a p value of 0.001 meaning that there was great statistic significance of this result; PPR scoring: r = 0.055, p {'<'} 0.001
             
@@ -705,7 +705,7 @@ pearson_correlation()
 
           <h3>Polynomial Regression</h3>
           <p>
-            After fitting the polynomial regression model to look at the effects of age on fantasy points, it is clear that there is almost no 
+            Because we couldn't determine any strong linear relationships in the data, we tested to see if a non-linear model may capture more variance. After fitting the polynomial regression model to look at the effects of age on fantasy points, it is clear that there is almost no 
             relationship between the two categories given the line is almost flat with a slight curve. Also, looking that the r^2 score, it had a 
             0.0126 which means that the model explains about 1% of the variation in fantasy points.
           </p>
@@ -774,10 +774,10 @@ plt.show()
         {/* Machine Learning Models Section */}
         <section id="ml-models">
           <h2>Machine Learning Models</h2>
-          
+          <h4>Having explored the foundational patterns in the data through our analysis, we then moved to machine learning methods to better quantify our observations. We seek to find relations in the data and evaluate how well the statistical models can capture them. The following section applies supervised and unsupervised learning techniques to gain more insight into the qualities we found in our primary analysis.</h4>
           <h3>Random Forest Regression</h3>
           <p>
-            <strong>Reasoning:</strong> Random Forest was chosen because it handles non-linear relationships well. 
+            <strong>Reasoning:</strong> Since both linear and polynomial models performed poorly, we decided to see if a more flexible model might perform better. Random Forest was chosen because it handles non-linear relationships well. 
             Since Pearson correlation showed weak linear relationships, we tested whether non-linear modeling 
             could better capture age-performance patterns.
           </p>
@@ -878,7 +878,7 @@ rf_pipeline = Pipeline(steps=[
 
           <h3>K-Means Clustering</h3>
           <p>
-            <strong>Reasoning:</strong> Clustering analysis was used to identify natural groupings in the data 
+            <strong>Reasoning:</strong> Finally, rather tahn trying to outright predict fantasy points, we used clustering to see if any natural groups might form and whether these clusters align with performance differences. Clustering analysis was used to identify natural groupings in the data 
             based on age and position, and to examine if distinct player archetypes emerge.
           </p>
 
@@ -929,9 +929,9 @@ kmeans_clustering()`}
           </div>
 
           <p>
-            For my machine learning approach, I used K Means clustering to determine if the data forms any clusters based on age and position, 
+            We used K Means clustering to determine if the data forms any clusters based on age and position, 
             and to see if whether there are any meaningful difference in fantasy points between clusters. After standardizing the ages and one-hot 
-            encoding the positions, I trained the model to create five clusters. The silhouette score of 0.526 means that there is moderately strong 
+            encoding the positions, the model, trained to create five clusters, got a silhouette score of 0.526. This score means that there is moderately strong 
             clustering in the data. The five clusters that were created seemed to be split in the following way: young WR, old WR, young TE, older veteran 
             players in both positions, and old TE. From the point averages, we can see that both WR groups and the veterans group had pretty high average 
             points (73-84), while the TE clusters' averages were lower (47-59). This would seem to indicate that WRs generally score more than TEs, but that 
